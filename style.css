@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    background-color: #fcc;
+    min-height: 100vh;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 85%;
+    height: 120px;
+    background-color: #b07d7d;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .progress-bar {
+    position: relative;
+    width: 88%;
+    display: flex;
+    align-items: center;
+}
+
+.container .progress-bar .progress {
+    width: 100%;
+    list-style: none;
+    counter-reset: step;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .progress-bar .progress li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    background-color: #c99;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .progress-bar .progress li.active {
+    background-color: #fcc;
+    box-shadow: 0 0 12px #fcd;
+}
+
+.container .progress-bar .progress li:before {
+    content: counter(step);
+    counter-increment: step;
+    font-size: 0.875rem;
+    color: #633;
+}
+
+.container .progress-bar .progress li span {
+    position: absolute;
+    top: 130%;
+    color: #fff;
+    font-size: 0.875rem;
+    white-space: nowrap;
+}
+
+.container .progress-bar .bar {
+    position: absolute;
+    width: 99%;
+    height: 3px;
+    overflow-x: hidden;
+    background-color: #fdd;
+}
+
+.container .progress-bar .bar .fill {
+    position: absolute;
+    height: 3px;
+    background-color: #fbb;
+}
